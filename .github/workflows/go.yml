@@ -28,7 +28,7 @@ jobs:
         go-version: ${{ matrix.go-version }}
 
     - name: Build
-      run: go build -v ./... -o terraform-provider-rediskey
+      run: go build -o terraform-provider-rediskey -v ./... 
 
     - name: Build for ${{ matrix.os }} ${{ matrix.arch }}
       run: GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} go build -v ./... -o terraform-provider-rediskey_${{ matrix.os }}_${{ matrix.arch }}
