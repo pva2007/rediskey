@@ -28,7 +28,7 @@ jobs:
         go-version: ${{ matrix.go-version }}
 
     - name: Build for ${{ matrix.os }} ${{ matrix.arch }}
-      run: GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} go build -v ./...
+      run: GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} go build -v ./... -o terraform-provider-rediskey_${{ matrix.os }}_${{ matrix.arch }}
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
